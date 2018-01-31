@@ -1,0 +1,58 @@
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.navbar-contacts {
+  width: $navbar-width;
+  .col.contacts {
+    text-align: right;
+  }
+  .col {
+    ul {
+      li {
+        margin-right: 10px;
+        a {
+          display: block;
+          @include width-height;
+          @include bkg;
+        }
+      }
+    }
+  }
+}
+.navbar {
+  width: $navbar-width;
+  .nav-item {
+    width: $socials-img-size * 4.5;
+    text-align: center;
+    @include media-breakpoint-down(lg) {
+        width: auto;
+    }
+  }
+  
+  .nav-link {
+    line-height: 60px;
+    @include hover-focus {
+      background-color: $primary;
+    }
+  }
+  .navbar-brand {
+    @include hover-focus {
+      color: transparent;
+    }
+    display: block;
+    color: transparent;
+    height: $navbar-br-height;
+    min-width: $navbar-br-width;
+    background-image: url(/images/wingsforworld-logo.png);
+    @include bkg;
+  }
+  .nav-item:not(:last-child) {
+    border-right: 1px solid $info;
+    @include media-breakpoint-down(lg) {
+      border-right: none;
+    }
+  }
+}
+

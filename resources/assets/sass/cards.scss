@@ -1,0 +1,49 @@
+%shared {
+  color: white;
+  font-size: 1.4em
+}
+.cards-grid {
+  margin: 20px auto;
+  width: 764px;
+
+  .card-add-img {
+    width: 300px;
+    height: 500px;
+  }
+  .card {
+    border: 5px solid #039;
+  }
+  .card-add {
+    margin-right: 30px;
+    background-color: #039;
+    .card-title {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      color: #FC3;
+      font-size: 1.8em;
+    }
+
+    .card-subtitle, .card-footer {
+      @extend %shared
+    }
+    .card-footer {
+      font-size: 1em;
+    }
+  }
+  .card > div {
+      width: 200px;
+  }
+  .cards-cont {
+    width: 440px;
+    .card {
+      margin-right: 10px;
+    }
+  }
+}
+
+@for $i from 1 through length($images) {
+  .card-img-#{$i} {
+    background: url($prefix-imgs + nth($images, $i));
+    @include bkg(cover);
+    height: 150px;
+  }
+}
